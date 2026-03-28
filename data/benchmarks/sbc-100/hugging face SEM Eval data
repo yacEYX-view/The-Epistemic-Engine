@@ -1,0 +1,3 @@
+from datasets import load_dataset
+
+ds = load_dataset("pietrolesci/hyperpartisan_news_detection", "default")
