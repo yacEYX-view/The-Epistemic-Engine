@@ -106,7 +106,7 @@ python -m pytest test_epistemic_engine.py -v
 
 ## Author
 
-Andres Fortino, Ph.D., New York University, School of Professional Studies
+Yenesey Concepcion, M.Sc New York University, School of Professional Studies
 
 ## License
 
