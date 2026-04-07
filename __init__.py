@@ -1,7 +1,2 @@
-"""
-The Epistemic Engine
-Epistemic bias detection framework
-"""
-from epistemic_engine.mafalda_engine import mafalda_engine
-
-__version__ = "0.1.0"
+"""The Epistemic Engine — Deterministic Structural Auditor for Institutional Discourse"""
+__version__ = "2.0.0"

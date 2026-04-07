@@ -1,163 +1,113 @@
-<<<<<<< HEAD
-# The Epistemic Engine
+# Epistemic Engine v2.0
 
-Detects epistemic bias in institutional text through abstraction, agency, and power analysis.
+A deterministic structural auditor for institutional discourse.
 
-## Status: GREEN - On schedule (Feb 2026)
+## What It Does
 
-## Quick Start
-```bash
+The Epistemic Engine reports how a text behaves as an institutional artifact: the argument's structure, where claims are open to refutation versus self-protecting, whether the posture invites learning versus defensive routines, and where the tone sits on two axes (HEAD/HEART and DISRUPTION/STABILITY).
 
-=======
-# The-Epistemic-Engine
+**Not included:** fact-checking, moral judgment, risk scoring, or behavior prediction.
 
-The Epistemic Engine is an epistemic bias auditor that acts as a reasoning spectrograph for text. It takes user‑provided text and produces a multidimensional assessment of abstraction, agency, falsifiability, and power orientation, along with targeted research prompts and a visual plot‑point representation of epistemic bias.
+## Philosophical Commitments
 
-## Table of Contents
-
-- [Project Overview](#project-overview)
-- [Current Status](#current-status)
-- [Quick Start](#quick-start)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Key Accomplishments](#key-accomplishments)
-- [Current Focus](#current-focus)
-- [Upcoming Milestones](#upcoming-milestones)
-- [Repository Structure](#repository-structure)
-- [Key Concepts](#key-concepts)
-- [Contributing](#contributing)
-- [License](#license)
-
-## Project Overview
-
-**The Epistemic Engine**: A Single LLM-as-a-Judge analytic framework that detects epistemic bias in institutional text by measuring psychological distance, rhetorical authority, and linguistic construal.
-
-## Current Status
-
-![Status](https://img.shields.io/badge/status-on--schedule-brightgreen) **On Schedule** — February 2026
-
-✨ **Status**: GREEN - No major issues, on schedule
-
-## Quick Start
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yacEYX-view/The-Epistemic-Engine.git
-   cd The-Epistemic-Engine
-   ```
-
-2. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. **Run the core engine**
-   ```bash
-   python src/mafalda_engine/mafalda_engine.py --input "Your text here"
-   ```
-
-4. **Explore the documentation**
-   - 📋 [Project Charter](docs/project-charter.md)
-   - 📊 [Communication Plan](docs/communication-plan.md)
-   - 📚 [Philosophical Framework](docs/framework.md)
-
-## Installation
-
-### Requirements
-- Python 3.9+
-- Dependencies listed in `requirements.txt`
-
-### Steps
-
-```bash
-# Clone the repository
-git clone https://github.com/yacEYX-view/The-Epistemic-Engine.git
-cd The-Epistemic-Engine
-
-# Create a virtual environment (recommended)
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
-```
-
-## Usage
-
-### Basic Usage
-
-```bash
-python src/mafalda_engine/mafalda_engine.py --input "Your institutional text here"
-```
-
-### Output
-
-The engine produces:
-- **Multidimensional Assessment**: Scores for abstraction, agency, falsifiability, and power orientation
-- **Targeted Research Prompts**: Suggestions for deeper analysis
-- **Visual Representation**: Plot-point visualization of epistemic bias
-
-### Example
-
-```bash
-python src/mafalda_engine/mafalda_engine.py --input "The policy was implemented to optimize operational efficiency." --output results.json
-```
-
-## Key Accomplishments
-
-- ✅ **Core Theoretical Framework Complete**
-- ✅ **Functional Python Prototype** (`mafalda_engine.py`)
-- ✅ **Project Charter Approved** (Jan 30, 2026)
-- ✅ **Communication Plan Established** (Feb 16, 2026)
-
-## Current Focus
-
-**Objective 3: Model Validation** — Construction of Gold Standard corpus and annotation study design
-
-## Upcoming Milestones
-
-- 📅 **Week 6 (Feb 27)**: Philosophical Framework Documentation submission
-- 📅 **Week 10 (Mar 15)**: Prototype Demonstration to Sponsor
+- **Kierkegaard:** truth as subjectivity — no claim to absolute truth, only structural integrity.
+- **Wittgenstein:** meaning as language game — all text is treated as institutional discourse.
+- **Popper:** falsifiability — claim structures are evaluated for openness to refutation.
+- **Argyris:** learning theories — discourse is evaluated for defensive routines versus double-loop learning.
 
 ## Repository Structure
 
 ```
-The-Epistemic-Engine/
-├── src/
-│   ├── mafalda_engine/          # Core engine modules
-│   └── validation/              # Validation datasets and protocols
-├── docs/                         # Comprehensive documentation
-├── data/
-│   └── benchmarks/              # SBC-100 and other datasets
-├── requirements.txt             # Python dependencies
-└── README.md                    # This file
+epistemic-engine/
+├── README.md                            ← This file
+├── METHODS.md                           ← Authoritative methods specification (v2.0)
+├── SYSTEM_PROMPT.md                     ← Deployment-ready system prompt for LLM wrappers
+├── SEC_BENCHMARK_GUIDE.md               ← SEC benchmark corpus documentation
+├── epistemic_engine.py                  ← Python kernel (deterministic reference implementation)
+├── test_epistemic_engine.py             ← Test suite
+├── __init__.py                          ← Package init
+├── requirements.txt                     ← Dependencies
+├── Epistemic_Engine_Gold_Standard_Template_v2.0.xlsx
+│                                        ← Workbook with seed cases + SEC benchmark data
+├── benchmark_docs/                      ← SEC benchmark corpus (6 PDFs, 3 paired sets)
+│   ├── benchmark_1_coinbase_form_8k.pdf
+│   ├── benchmark_1_5_coinbase_reuters_interpretation.pdf
+│   ├── benchmark_2_supermicro_8k_compliance.pdf
+│   ├── benchmark_2_5_supermicro_reuters_deadline.pdf
+│   ├── benchmark_3_tupperware_nt10k.pdf
+│   └── benchmark_3_5_tupperware_reuters_going_concern.pdf
+└── reference/                           ← Non-modified reference documents
+    ├── Specs_E_E_03_04_26.pdf
+    ├── MAFALDA_Logic_Coded.pdf
+    └── 1Fallacy_Classification_Gold_Standard_Spec_v1_0.docx
 ```
 
-## Key Concepts
+## Quick Start
 
-- **Epistemic Bias**: Systematic distortions in how knowledge is represented or reasoned about in text
-- **Psychological Distance**: How "far" or "near" a concept feels cognitively; influences abstraction level
-- **Construal Level**: The abstractness/concreteness of how we think about or represent information
-- **Rhetorical Authority**: The degree to which text asserts authority or expertise without evidence
-- **Falsifiability**: The extent to which claims in text can be tested or disproven
+### Python kernel (deterministic reference)
 
-## Contributing
+```bash
+# Raw-text mode
+python epistemic_engine.py --text "We must act now. The crisis is inevitable."
 
-We welcome contributions! Please follow these guidelines:
+# Measures mode
+python epistemic_engine.py --measures "evasion_count: 3
+falsifiability_low: true
+normative_density: 0.08"
 
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/your-feature`
-3. Commit your changes: `git commit -m 'Add your feature'`
-4. Push to the branch: `git push origin feature/your-feature`
-5. Open a Pull Request
+# File mode
+python epistemic_engine.py --file benchmark_docs/benchmark_1_coinbase_form_8k.pdf
 
-For detailed contribution guidelines, see [CONTRIBUTING.md](CONTRIBUTING.md).
+# Drill-down
+python epistemic_engine.py --text "..." --drilldown 2,6
+
+# JSON output
+python epistemic_engine.py --text "..." --format json
+```
+
+### LLM wrapper deployment (Gemini / GPT)
+
+1. Copy the contents of `SYSTEM_PROMPT.md` into the system instruction field.
+2. Set runtime: Temperature 0.0, Top-p 1.0, Tools off.
+3. Supply text via user prompt: "Audit this text. Text: [PASTE]"
+4. For measures mode: "Audit these measures. Measures: [LIST]"
+
+## SEC Benchmark Corpus
+
+Six documents organized as three paired sets, each pairing a technical SEC filing with its Reuters outside interpretation:
+
+| Pair | Technical (SEC filing) | Interpretation (Reuters) |
+|------|----------------------|------------------------|
+| **1** | Coinbase Form 8-K: material cybersecurity incident | Reuters: Coinbase cyberattack, $180–$400M hit |
+| **2** | Super Micro Form 8-K: reporting compliance update | Reuters: delayed annual report, share-price reaction |
+| **3** | Tupperware Form 12b-25: late 10-K notice | Reuters: going-concern doubts, inadequate liquidity |
+
+**Design rationale:** The pairing structure tests whether the engine differentiates between a regulatory filing's technical register and a news organization's interpretive framing of the same underlying event. Technical filings should produce higher head_density, higher lex_density, and stronger stability leanings. Interpretations should show more disruption orientation and lower signal density overall.
+
+See `SEC_BENCHMARK_GUIDE.md` for detailed expected outputs.
+
+## Running Tests
+
+```bash
+python -m pytest test_epistemic_engine.py -v
+```
+
+## Version History
+
+- **v1.0** (March 2026): Initial release. Five-document proof-of-concept corpus.
+- **v2.0** (March 2026): Cross-platform validation release. Adds SEC benchmark corpus, extended evasion lexicon, stability exclusion list, Layer 2/3 separation enforcement, coordinate calibration guidance, scientism calibration for genuine methodology documents. Informed by four-engine comparison (2× GPT-4, 2× Gemini 3 Flash).
+
+## Runtime Settings (for reproducibility)
+
+- Temperature: 0.0 (or lowest available)
+- Top-p: 1.0
+- Tools: off (unless required by deployment)
+- All classification logic is deterministic — threshold-based with no stochastic components.
+
+## Author
+
+Andres Fortino, Ph.D., New York University, School of Professional Studies
 
 ## License
 
-This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
-
----
-
-**For questions or issues**, please open a GitHub Issue or contact the maintainers.
->>>>>>> f94c7881457e1e8f1cdc9c8544368528a208ce7d
+Proprietary. See accompanying license documentation.
