@@ -1,4 +1,4 @@
-# Epistemic Engine v2.0
+# Epistemic Engine 
 
 A deterministic structural auditor for institutional discourse.
 
