@@ -187,7 +187,7 @@ The engine's analytical categories are operationalizations of three philosophica
 
 - **Wittgenstein (Layer 1).** All institutional text is treated as a rule-governed language game. The same word performs different functions in different games — `compliance` performs bureaucratic register in an SEC filing and authority invocation in an editorial.
 - **Popper (Layer 2).** The falsifiability criterion is the core evaluative standard. Claims structured to be immune from evidence (immunizing stratagems) are epistemically inferior to claims that expose themselves to refutation.
-- **Argyris (Layer 4).** The distinction between discourse enabling genuine inquiry (open-loop reasoning, compatible with double-loop learning) and discourse encoding defensive routines that protect existing assumptions from revision.
+- **Argyris (Layer 3).** The distinction between discourse enabling genuine inquiry (open-loop reasoning, compatible with double-loop learning) and discourse encoding defensive routines that protect existing assumptions from revision.
 - **Kierkegaard (meta-design).** Foundational humility. The engine reports continuous coordinates rather than binary verdicts, preserves inter-model disagreement as informational data, and refuses to collapse interpretive uncertainty into false precision.
 
 ---
