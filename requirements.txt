@@ -1,4 +1,0 @@
-# Epistemic Engine v1.0.0
-# Core engine: no dependencies (stdlib only)
-# Test suite and workbook generation:
-openpyxl>=3.1.0
