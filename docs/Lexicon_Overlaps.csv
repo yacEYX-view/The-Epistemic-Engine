@@ -1,0 +1,47 @@
+CROSS-LEXICON OVERLAPS — Terms appearing in multiple signal lexicons,,,
+Overlaps are INTENTIONAL: a word that performs two rhetorical functions simultaneously scores in both lexicons. This is not an error — it is signal richness. Source: EE_Comprehensive_Lexicon_Rebuild_v1.xlsx → Overlaps sheet.,,,
+Term,Appears In,Rhetorical Justification,Scoring Implication
+according to,ETHOS + LOGOS,Performs multiple rhetorical functions — invoking a source (ETHOS) while also serving as a reasoning connector (LOGOS),Increments both ethos_density and logos density
+alarmed,HEART + PATHOS,Anxiety (HEART) AND emotional loading (PATHOS — original via alarm/alarmed),Increments both heart_coordinate (neg Y) and pathos_density
+assessed,HEAD + LEX,Bureaucratic process (LEX) AND cognitive operation (HEAD),Increments both head_coordinate (pos Y) and lexical_density
+assessment,HEAD + LEX,Bureaucratic process (LEX) AND cognitive operation (HEAD),Increments both head_coordinate (pos Y) and lexical_density
+catastrophic,DISRUPTION + PATHOS,Rupture cue (DISRUPTION) AND narrative amplifier (PATHOS),Increments both disruption_coordinate (pos X) and pathos_density
+compliance,ETHOS + LEX,Regulatory authority (ETHOS) AND bureaucratic register (LEX),Increments both ethos_density and lexical_density
+cooperated,LEX + STABILITY,Procedural action (LEX) AND assurance/continuity (STABILITY),Increments both lexical_density and stability_coordinate (neg X)
+cooperating,LEX + STABILITY,Performs multiple rhetorical functions — procedural (LEX) and continuity (STABILITY),Increments both lexical_density and stability_coordinate (neg X)
+cooperation,LEX + STABILITY,Procedural action (LEX) AND assurance/continuity (STABILITY),Increments both lexical_density and stability_coordinate (neg X)
+data,HEAD + RATIO,Performs multiple rhetorical functions — analytic (HEAD) and quantitative (RATIO),Increments both head_coordinate (pos Y) and ratio_density
+demand,HEART + NORMATIVE,Prescriptive (NORMATIVE — original) AND threat/coercion (HEART),Increments both normative_density (Gate 2) and heart_coordinate (neg Y)
+devastating,HEART + PATHOS,Emotive (HEART — original) AND narrative amplifier (PATHOS — original),Increments both heart_coordinate (neg Y) and pathos_density
+disgust,HEART + PATHOS,Performs multiple rhetorical functions — core emotive,Increments both heart_coordinate (neg Y) and pathos_density
+disgusting,HEART + PATHOS,Performs multiple rhetorical functions — core emotive,Increments both heart_coordinate (neg Y) and pathos_density
+documented,HEAD + LEX,Bureaucratic process (LEX) AND analytic recording (HEAD),Increments both head_coordinate (pos Y) and lexical_density
+estimated,HEAD + RATIO,Quantifies (RATIO) AND performs cognitive analysis (HEAD),Increments both head_coordinate (pos Y) and ratio_density
+estimates,HEAD + RATIO,Quantifies (RATIO) AND performs cognitive analysis (HEAD),Increments both head_coordinate (pos Y) and ratio_density
+estimation,HEAD + RATIO,Quantifies (RATIO) AND performs cognitive analysis (HEAD),Increments both head_coordinate (pos Y) and ratio_density
+evaluated,HEAD + LEX,Bureaucratic process (LEX) AND cognitive operation (HEAD),Increments both head_coordinate (pos Y) and lexical_density
+evaluation,HEAD + LEX,Bureaucratic process (LEX) AND cognitive operation (HEAD),Increments both head_coordinate (pos Y) and lexical_density
+framework,HEAD + LEX,Performs multiple rhetorical functions — structural (LEX) and analytic (HEAD),Increments both head_coordinate (pos Y) and lexical_density
+horrifying,HEART + PATHOS,Performs multiple rhetorical functions — core emotive,Increments both heart_coordinate (neg Y) and pathos_density
+impact,DISRUPTION + LEX,Performs multiple rhetorical functions — rupture (DISRUPTION) and operational register (LEX),Increments both disruption_coordinate (pos X) and lexical_density
+institution,ETHOS + STABILITY,Authority marker (ETHOS — original) AND preservation cue (STABILITY — original),Increments both ethos_density and stability_coordinate (neg X)
+mandate,LEX + NORMATIVE,Performs multiple rhetorical functions — procedural (LEX) and prescriptive (NORMATIVE),Increments both lexical_density and normative_density (Gate 2)
+measure,HEAD + RATIO,Performs multiple rhetorical functions — analytic (HEAD) and quantitative (RATIO),Increments both head_coordinate (pos Y) and ratio_density
+measured,HEAD + RATIO,Performs multiple rhetorical functions — analytic (HEAD) and quantitative (RATIO),Increments both head_coordinate (pos Y) and ratio_density
+measurement,HEAD + RATIO,Performs multiple rhetorical functions — analytic (HEAD) and quantitative (RATIO),Increments both head_coordinate (pos Y) and ratio_density
+methodology,HEAD + LEX,Bureaucratic register (LEX — original) AND analytic method (HEAD — original),Increments both head_coordinate (pos Y) and lexical_density
+metrics,LEX + RATIO,Performs multiple rhetorical functions — procedural (LEX) and quantitative (RATIO),Increments both lexical_density and ratio_density
+outcome,HEAD + LEX,Bureaucratic deliverable (LEX — original) AND analytic result (HEAD),Increments both head_coordinate (pos Y) and lexical_density
+outcomes,HEAD + LEX,Bureaucratic deliverable (LEX — original) AND analytic result (HEAD),Increments both head_coordinate (pos Y) and lexical_density
+ratio,HEAD + RATIO,Performs multiple rhetorical functions — analytic (HEAD) and quantitative (RATIO),Increments both head_coordinate (pos Y) and ratio_density
+reimbursed,LEX + STABILITY,Procedural action (LEX) AND restoration (STABILITY),Increments both lexical_density and stability_coordinate (neg X)
+reimbursement,LEX + STABILITY,Procedural action (LEX) AND restoration (STABILITY),Increments both lexical_density and stability_coordinate (neg X)
+remediated,LEX + STABILITY,Procedural action (LEX) AND restoration (STABILITY),Increments both lexical_density and stability_coordinate (neg X)
+remediation,LEX + STABILITY,Procedural action (LEX) AND restoration (STABILITY),Increments both lexical_density and stability_coordinate (neg X)
+subset,HEAD + RATIO,Performs multiple rhetorical functions — analytic segmentation (HEAD) and proportional framing (RATIO),Increments both head_coordinate (pos Y) and ratio_density
+unprecedented,DISRUPTION + PATHOS,Rupture cue (DISRUPTION) AND narrative amplifier (PATHOS),Increments both disruption_coordinate (pos X) and pathos_density
+urgent,DISRUPTION + PATHOS,Rupture/crisis cue (DISRUPTION) AND narrative amplifier (PATHOS),Increments both disruption_coordinate (pos X) and pathos_density
+urgently,DISRUPTION + PATHOS,Rupture/crisis cue (DISRUPTION) AND narrative amplifier (PATHOS),Increments both disruption_coordinate (pos X) and pathos_density
+voluntarily,LEX + STABILITY,Procedural choice (LEX) AND trust/assurance posture (STABILITY),Increments both lexical_density and stability_coordinate (neg X)
+voluntary,LEX + STABILITY,Procedural choice (LEX) AND trust/assurance posture (STABILITY),Increments both lexical_density and stability_coordinate (neg X)
+vulnerability,DISRUPTION + HEART,Performs multiple rhetorical functions — rupture exposure (DISRUPTION) and emotive threat (HEART),Increments both disruption_coordinate (pos X) and heart_coordinate (neg Y)

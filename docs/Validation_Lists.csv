@@ -1,0 +1,16 @@
+vl_source_corpus,vl_domain,vl_boolean,vl_epistemic_classification,vl_language_game_contexts,vl_laundering_token,vl_authority_laundering_type,vl_fallacy_level1,vl_fallacy_level2,vl_fallacy_level3,vl_annotator_role,vl_popper_flag,vl_argyris_mode,vl_wittgenstein_game_type,vl_head_heart_vector,vl_stability_disruption_vector,vl_laundering_risk,vl_quality_control_status,vl_engine_classification
+op-ed,politics,TRUE,open-loop,campaign / legislative persuasion,scientism,scientism,Logos,Appeal to Emotion,Moral Blackmail,philosopher,falsifiable,single-loop,rule contestation,HEAD+,stability+,low,raw,clean
+debate,finance,FALSE,defensive-routine,public moral signaling,bureaucratic_masking,bureaucratic_masking,Pathos,Appeal to Authority,Institutional Shielding,rhetorician,falsifiable (conditional),double-loop,boundary policing,HEART+,disruption+,medium,reviewed,evasion
+policy_doc,science_communication,,mixed,policy justification,identity_laundering,identity_laundering,Ethos,False Dilemma,Binary Framing,domain expert,non-empirical,defensive-routine,rule enforcement,balanced,balanced,high,reconciled,ideological
+speech,legal,,,institutional policy justification,ethos,,,Ad Hominem,Motive Attack,layperson,non-empirical (normative pressure),mixed,identity signaling,HEAD+/HEART+,stability+/disruption+,,gold,moral_framing
+academic_article,compliance,,,market persuasion,pathos,,,Appeal to Fear,Bureaucratic Shielding,research assistant,immunizing_stratagem,open-loop,policy justification,HEAD+/HEART-,stability+/disruption-,,,
+legal_brief,education,,,academic argument,logos,,,Selective Emphasis,Narrative Steering,adjudicator,normative but revisable,,market persuasion,HEAD-/HEART+,stability-/disruption+,,,
+social_media,healthcare,,,compliance policy,,,,Red Herring,Credential Laundering,engine,testable empirical claim (sometimes),,academic argument,HEAD-/HEART-,stability-/disruption-,,,
+hearing,technology,,,identity signaling,,,,Straw Man,Crisis Framing,,immunizing device,,corporate risk disclosure,,,,,
+interview,media,,,legal advocacy,,,,Slippery Slope,,,falsifiable (if construed as empirical about motives),,editorial advocacy,,,,,
+sec_filing,other,,,corporate risk disclosure,,,,Circular Reasoning,,,,,,,,,,
+news_interpretation,,,,editorial advocacy,,,,Equivocation,,,,,,,,,,
+other,,,,policy defense,,,,,,,,,,,,,,
+synthetic,,,,scientific justification,,,,,,,,,,,,,,
+,,,,polemic,,,,,,,,,,,,,,
+,,,,PR statement,,,,,,,,,,,,,,

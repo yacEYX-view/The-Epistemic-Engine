@@ -1,0 +1,21 @@
+EPISTEMIC ENGINE — LEXICON REGISTRY v1.0,,,,,,,
+"Function-first, domain-agnostic. Each signal measures a rhetorical function, not a domain. Built from METHODS.md signal definitions. Source: EE_Comprehensive_Lexicon_Rebuild_v1.xlsx",,,,,,,
+Lexicon,Rhetorical Function,Engine Layer,Original Count,Expanded Count,Net Added,Fires On,Density Column (Philosophical_Signals)
+NORMATIVE,"Prescribes: commands, obligations, duties",L2 Bias Gate,25,67,42,Gate 2 (Ideological): normative_density threshold,—
+EVASION,Deflects: blocks contestation,L2 Bias Gate,18,43,25,Gate 4 (Evasion): evasion_count threshold,—
+RATIO,"Quantifies: numbers, measurement, proportion",L3 Laundering,43,144,101,L3 scientism flag (ratio_density),ratio_density
+ETHOS,"Invokes authority: institutions, credentials, sources",L3 Laundering,42,135,93,L3 scientism flag (ethos_density),ethos_density
+LEX,Bureaucratic register: procedural/managerial speech,L3 Laundering,42,123,81,L3 bureaucratic_masking flag (lex_density),lexical_density*
+PATHOS,Emotional loading: amplifies affect beyond description,L3 Laundering,36,69,33,L3 identity_laundering flag (pathos_density),pathos_density
+LOGOS,Chains reasoning: explicit logical connectives,Informational,26,60,34,Informational only — no gate,logos_density
+HEAD,Analyzes: technical/cognitive operations on information,L5 Coordinates,55,141,86,Y-axis positive pole (head_coordinate),head_coordinate
+HEART,"Emotes: affect, identity, moral feeling, threat",L5 Coordinates,55,96,41,Y-axis negative pole (heart_coordinate),heart_coordinate
+DISRUPTION,"Signals rupture: change, crisis, breaking",L5 Coordinates,37,107,70,X-axis positive pole (disruption_coordinate),disruption_coordinate
+STABILITY,"Signals continuity: preservation, order, restoration",L5 Coordinates,45,106,61,X-axis negative pole (stability_coordinate),stability_coordinate
+TOTAL,11 lexicons,—,424,1091,667,—,—
+* NOTE: The 'lexical_density' column in Philosophical_Signals maps to the LEX lexicon (bureaucratic/managerial register). Column rename to 'lex_density' is recommended for unambiguous alignment with this registry.,,,,,,,
+ENGINE LAYER LEGEND,,,,,,,
+L2 Bias Gate,NORMATIVE + EVASION fire the bias gates (ideological / evasion),,,,,,
+L3 Laundering,RATIO + ETHOS + LEX + PATHOS drive the three laundering flags,,,,,,
+L5 Coordinates,HEAD / HEART / DISRUPTION / STABILITY place text on the spectrograph,,,,,,
+Informational,"LOGOS chains reasoning — no gate, no coordinate contribution",,,,,,

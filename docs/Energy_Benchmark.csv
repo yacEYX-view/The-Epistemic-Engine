@@ -1,0 +1,46 @@
+ENERGY / OIL MARKET BENCHMARK CORPUS — Per-Document Audit Results,,,,,,,,,,,,,,,,,,
+"Corpus: WSJ & FT primary reporting (ENE_X1–X5) + syndicated wire reconstructions (ENE_X1E–X5E) · 10 Documents · Gold Standard: 9 clean, 1 moral_framing · Models: GPT o3 · Gemini",,,,,,,,,,,,,,,,,,
+SECTION 1 — CORPUS DOCUMENT REGISTER,,,,,,,,,,,,,,,,,,
+Doc ID,Type,Title,Source / Provenance,Category,Gold Std,Language Game,,,,,,,,,,,,
+ENE_X1,Primary,WSJ: 2020 Oil Price Crash Below Zero,"WSJ (Ryan Dezember, April 21 2020)",Financial / Market,clean,scientific justification,,,,,,,,,,,,
+ENE_X1E,Recon,2020 Negative-Price Wire Reconstruction,CNN Business / Bloomberg / EIA / Fortune,Financial / Market,clean,journalistic recap,,,,,,,,,,,,
+ENE_X2,Primary,WSJ: 2023 Saudi Unilateral Production Cut,"WSJ (OPEC+ reporting, January 2021)",Financial / Political,clean,institutional policy journalism,,,,,,,,,,,,
+ENE_X2E,Recon,Saudi Cut Wire Reconstruction,NPR / CNN Business / Al Jazeera / PBS,Financial / Political,clean,journalistic summary,,,,,,,,,,,,
+ENE_X3,Primary,FT: 2018 Brent Crude Rally to $80,"FT (October 2018, Middle East / Hurricane Milton)",Financial / Geopolitical,clean,geopolitical risk analysis,,,,,,,,,,,,
+ENE_X3E,Recon,2018 Brent Rally Synthesis,EIA / Wikipedia / CRS / contemporaneous reporting,Financial / Geopolitical,clean,historical synthesis,,,,,,,,,,,,
+ENE_X4,Primary,FT: 2020 Negative Oil Prices — What It Means,FT (April 2020 industry analysis),Financial / Market,clean,scientific justification,,,,,,,,,,,,
+ENE_X4E,Recon,2020 Negative-Price Synthesis,Bloomberg / CNBC / Fortune / PMC academic,Financial / Market,clean,informational / market analysis,,,,,,,,,,,,
+ENE_X5,Primary,FT: 2023 Surprise OPEC+ Production Cuts,FT (Nov–Dec 2023 voluntary cuts),Financial / Political,clean,bureaucratic / institutional,,,,,,,,,,,,
+ENE_X5E,Recon,2023 OPEC+ Surprise Cuts Synthesis,NPR / AP wire / CNN Business,Financial / Political / Social,moral_framing,political narrative / affective,,,,,,,,,,,,
+SECTION 2 — PER-DOCUMENT MODEL COMPARISON,,,,,,,,,,,,,,,,,,
+Doc ID,Gold Std,GPT Class,GPT X,GPT Y,GPT I,GPT Laund,GPT Posture,GPT Quad,Gem Class,Gem X,Gem Y,Gem I,Gem Laund,Gem Posture,Gem Quad,GPT=GS,Gem=GS,Agree
+ENE_X1,clean,clean,0.01,-0.02,0.02,none,open_loop_reasoning,CLEAN,clean,4,2.5,3.3,scientism,defensive_routine,Q2,YES,YES,YES
+ENE_X1E,clean,clean,0.8,-1.2,1,none,open_loop_reasoning,CLEAN,clean,3,3,3,none,open_loop_reasoning,Q2,YES,YES,YES
+ENE_X2,clean,clean,0.04,-0.04,0.04,none,open_loop_reasoning,CLEAN,clean,-1.5,3.5,2.7,bureaucratic_masking,defensive_routine,Q1,YES,YES,YES
+ENE_X2E,clean,moral_framing,-0.9,-1.1,0.9,none,defensive_routine,Q3,clean,-2.5,2,2.2,none,open_loop_reasoning,Q1,NO,YES,NO
+ENE_X3,clean,moral_framing,4.2,-3.9,5.5,identity_laundering,defensive_routine,Q4,clean,4.5,1,3.3,scientism,defensive_routine,Q2,NO,YES,NO
+ENE_X3E,clean,clean,0.3,-0.2,0.2,none,open_loop_reasoning,CLEAN,clean,2,4,3.1,none,open_loop_reasoning,Q2,YES,YES,YES
+ENE_X4,clean,clean,0.03,-0.01,0.03,none,open_loop_reasoning,CLEAN,clean,5.5,2,4.1,scientism,defensive_routine,Q2,YES,YES,YES
+ENE_X4E,clean,clean,1.2,-0.4,0.9,none,open_loop_reasoning,CLEAN,clean,3.5,3,3.3,none,open_loop_reasoning,Q2,YES,YES,YES
+ENE_X5,clean,ideological,3.8,0.9,3.9,scientism,defensive_routine,Q2,clean,-1,2.5,1.9,bureaucratic_masking,open_loop_reasoning,Q1,NO,YES,NO
+ENE_X5E,moral_framing,moral_framing,2,-1.5,2,none,defensive_routine,Q4,moral_framing,2.5,-2,2.3,identity_laundering,defensive_routine,Q4,YES,YES,YES
+SECTION 3 — COHEN'S κ AND F1 vs GOLD STANDARD,,,,,,,,,,,,,,,,,,
+Comparison,n,Obs Agr,Exp Agr,κ,Interpretation,,,,,,,,,,,,,
+GPT o3 vs Gold Standard,10,0.7,0.57,0.302,Fair,,,,,,,,,,,,,
+Gemini vs Gold Standard,10,1,0.82,1,Almost perfect,,,,,,,,,,,,,
+GPT o3 vs Gemini (inter-model),10,0.7,0.57,0.302,Fair,,,,,,,,,,,,,
+Model,Class,TP,FP,FN,Precision,Recall,F1,Macro F1,,,,,,,,,,
+GPT o3,clean,6,0,3,1,0.667,0.8,0.433,,,,,,,,,,
+,ideological,0,1,0,0,0,0,,,,,,,,,,,
+,moral_framing,1,2,0,0.333,1,0.5,,,,,,,,,,,
+Gemini,clean,9,0,0,1,1,1,1,,,,,,,,,,
+,moral_framing,1,0,0,1,1,1,,,,,,,,,,,
+SECTION 4 — KEY FINDINGS,,,,,,,,,,,,,,,,,,
+Finding,Detail,,,,,,,,,,,,,,,,,
+Gemini gate accuracy,"Gemini: 10/10 correct vs gold standard (κ = 1.000, Macro F1 = 1.000). Correctly identifies all 9 clean documents and the single moral_framing case (ENE_X5E).",,,,,,,,,,,,,,,,,
+GPT o3 gate activations,"GPT o3: 7/10 match vs gold standard (κ = 0.302). Three gate activations beyond gold standard: ENE_X3 (moral_framing, geopolitical conflict language), ENE_X5 (ideological, prescriptive market-management rhetoric), ENE_X2E (moral_framing, consumer-cost rhetoric). These are structural measurements reflecting register sensitivity at density thresholds.",,,,,,,,,,,,,,,,,
+ENE_X5E convergence,"Both models independently classify ENE_X5E (synthesized OPEC+ cuts) as moral_framing. Consumer-cost framing (""$0.26/gallon""), war-finance rhetoric (""fill Putin's coffers""), alliance-strain narrative (""infuriated the Biden administration"") activate the framing gate on both platforms. Strongest single-document validation in the energy corpus.",,,,,,,,,,,,,,,,,
+Coordinate compression,"GPT o3 clean docs: X/Y range 0.01–1.2 (compressed). Gemini clean docs: X/Y range 1.0–5.5 (full-scale). Compression ratio 3–100×. Consistent with SEC and BLS benchmark compression patterns. GPT o3 gate-fired docs (ENE_X3, X5) jump to X=3.8–4.2, consistent with SEC editorial-register behavior.",,,,,,,,,,,,,,,,,
+Laundering pattern differentiation,"Gemini detects scientism on three primary articles (ENE_X1, X3, X4) where institutional authority cues (S&P Platts, Goldman Sachs, Wood Mackenzie) co-occur with ratio density. Bureaucratic_masking on ENE_X2 and X5 where procedural vocabulary (OPEC+ quotas, baselines, secretariat) dominates. Identity_laundering on ENE_X5E where political narrative subordinates economic data. Three empirically distinct laundering patterns in a single corpus.",,,,,,,,,,,,,,,,,
+Primary vs reconstruction register,"Primary WSJ/FT articles deploy higher disruption density with analytically integrated source citation. Syndicated reconstructions show either neutral synthesis (ENE_X1E, X3E, X4E) or politically narrativized framing (ENE_X2E, X5E). The engine differentiates these registers structurally.",,,,,,,,,,,,,,,,,
+Gemini coordinate derivation note,"ENE_X4E, ENE_X5, ENE_X5E: Gemini produced layer-by-layer analysis without explicit numeric coordinates. Gold-standard coordinates for these three documents are derived from Gemini's qualitative signal descriptions (dominant/recessive signal strengths, quadrant assignment). All other Gemini coordinates are directly from the output document.",,,,,,,,,,,,,,,,,
