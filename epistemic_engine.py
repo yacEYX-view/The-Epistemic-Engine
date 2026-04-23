@@ -891,6 +891,75 @@ def format_audit(result: Dict, drilldown: Optional[List[int]] = None) -> str:
                 if laundering["flags"]:
                     out.append("To clear laundering flags:")
                     if "scientism"
+                   in laundering["flags"]:
+                        out.append("  - Scientism: lower ratio_density or ethos_density below 0.02.")
+                    if "bureaucratic_masking" in laundering["flags"]:
+                        out.append("  - Bureaucratic masking: lower lex_density or ratio_density below 0.02.")
+                    if "identity_laundering" in laundering["flags"]:
+                        out.append("  - Identity laundering: lower ethos_density below 0.03, or lower pathos + evasion.")
+                out.append("")
+
+        # Always append spectrograph after drill-down
+        out.append("── SPECTROGRAPH ──")
+        out.append(result["spectrograph"])
+        out.append(f"X = {coords['X']}, Y = {coords['Y']}, Intensity = {coords['intensity']}")
+        return "\n".join(out)
+
+    # ── STANDARD OUTPUT (A–D) ──
+
+    # A) Five-sentence audit snapshot
+    out.append("A) AUDIT SNAPSHOT")
+    out.append("")
+
+    quad_label = QUADRANT_DESCRIPTIONS.get(coords["quadrant"], coords["quadrant"])
+    flags_list = list(laundering["flags"].keys())
+    flags_str = ", ".join(flags_list) if flags_list else "none"
+
+    s1 = f"The text operates as {lang_game['game_type']} within an institutional language game."
+    s2 = f"Bias gate classification: {cls} ({gate['reason']})."
+    s3 = f"The discourse sits in {coords['quadrant']} ({quad_label}) at intensity {coords['intensity']}/10."
+    s4 = f"Authority laundering flags: {flags_str}; learning posture: {learning.replace('_', ' ')}."
+    s5 = f"Testability label: {testability.replace('_', ' ')}.{estimated_note}"
+
+    out.append(s1)
+    out.append(s2)
+    out.append(s3)
+    out.append(s4)
+    out.append(s5)
+    out.append("")
+
+    # B) One-line logic result
+    out.append("B) LOGIC RESULT")
+    out.append("")
+    if cls != "clean":
+        out.append(f"Logic flaws detected: {cls} via {gate['gate_fired']} — {gate['reason']}.")
+    else:
+        out.append(f"Logic type used: clean claim structure — no bias gate fired.")
+    out.append("")
+
+    # C) Spectrograph + three sentences
+    out.append("C) SPECTROGRAPH")
+    out.append("")
+    out.append(result["spectrograph"])
+    out.append("")
+    out.append(f"X = {coords['X']} (DISRUPTION − STABILITY scaled ×10): {'disruption-leaning' if coords['X'] > 0 else 'stability-leaning' if coords['X'] < 0 else 'balanced'}.")
+    out.append(f"Y = {coords['Y']} (HEAD − HEART scaled ×10): {'head-coded (analytic)' if coords['Y'] > 0 else 'heart-coded (emotive)' if coords['Y'] < 0 else 'balanced'}.")
+    out.append(f"Intensity = {coords['intensity']}/10: {'high rhetorical commitment' if coords['intensity'] > 6 else 'moderate commitment' if coords['intensity'] > 3 else 'low commitment'}.")
+    out.append("")
+
+    # D) Ask-for menu
+    out.append("D) ASK-FOR MENU")
+    out.append("")
+    out.append("1) Language game")
+    out.append("2) Argument skeleton")
+    out.append("3) Falsifiability and self-protection")
+    out.append("4) Authority laundering excerpts")
+    out.append("5) Learning posture")
+    out.append("6) Deterministic readout (proof)")
+    out.append("7) What would change the conclusion")
+
+    return "\n".join(out)
+
 
 
    
