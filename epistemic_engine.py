@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-The Epistemic Engine v2.0.0 — Deterministic Structural Auditor for Institutional Discourse
+The Epistemic Engine Deterministic Structural Auditor for Institutional Discourse
 
 Implements the full layered logic architecture:
   Layer 0: Structural Extraction (14 signal densities)
