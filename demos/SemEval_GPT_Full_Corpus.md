@@ -1,1 +1,0 @@
-<content of SemEval_GPT_Full_Corpus.md>
