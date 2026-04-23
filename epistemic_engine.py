@@ -1,5 +1,3 @@
-Looking at your repository and the current state of your project, I can see you have a sophisticated implementation already in place. Based on your comprehensive thesis work and the examples you've shared, here's an updated version that better reflects the current status of your research:
-
 ```python
 #!/usr/bin/env python3
 """
