@@ -31,3 +31,60 @@ The system implements a six-layer architecture:
 ```bash
 git clone https://github.com/yacEYX-view/The-Epistemic-Engine.git
 cd The-Epistemic-Engine
+
+Python 3.8+ required. No external dependencies — the engine uses only the standard library.
+
+Usage
+python epistemic_engine.py --text "Your institutional text here"
+python epistemic_engine.py --file path/to/document.txt
+
+The engine runs in under two seconds on a standard laptop. API keys are only needed if you are
+using an LLM platform as the interface wrapper (GPT o3 or Gemini). The Python kernel itself runs
+locally and independently of any AI provider.
+
+Sample Output
+
+A) AUDIT SNAPSHOT
+
+Language game:    corporate_risk_disclosure
+Bias gate:        clean
+Laundering:       bureaucratic_masking
+Learning posture: defensive_routine
+Testability:      immunizing_stratagem
+
+B) LOGIC RESULT
+
+Logic type used: clean claim structure — no bias gate fired.
+Layer 3 (Laundering):  bureaucratic_masking FIRED
+  lex_density (0.038) > 0.02 AND ratio_density (0.041) > 0.02
+
+C) SPECTROGRAPH
+
+        HEAD (+)
+           |
+    Q1     ★     Q2
+           |
+STAB <---- + ----> DISR
+           |
+    Q3           Q4
+           |
+       HEART (-)
+
+X = -1.2, Y = -0.8, Intensity = 3.4/10
+
+D) ASK-FOR MENU
+
+To audit the audit, request:
+  "Show full signal densities"
+  "Show gate threshold comparisons"
+  "Explain bureaucratic_masking flag"
+
+Validation Highlights
+The engine was validated against a 69-text corpus. Key findings include:
+
+Kernel Violation Pattern: LLMs correctly compute signals but fail to execute deterministic logic (see docs/KERNEL_VIOLATION_REGISTRY.md).
+Register-Mismatch Gradient: Performance (Cohen's κ) drops from 1.000 on synthetic institutional text to 0.053 on informal argumentation (MAFALDA), proving distinct analytical tasks.
+Learn More
+Thesis: docs/Concepcion_Epistemic_Engine_2026.pdf
+Methods: METHODS.md
+Examples: demo/ directory
