@@ -1,65 +1,58 @@
 # The Epistemic Engine
 
-**A Deterministic Structural Auditor for Institutional Discourse**
-
-Yenesey Athena Concepcion  
-NYU NetID: yac2027  
-Applied Technical Project  
-NYU School of Professional Studies | Spring 2026  
-
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+A deterministic structural auditor for institutional discourse.
 
 ## Overview
 
-The Epistemic Engine is a deterministic, philosophy-grounded auditing system that classifies the structural epistemic properties of institutional text. It evaluates *how* text makes its claims — whether claims are open to refutation or self-protecting, whether authority is deployed to foreclose contestation, and where the rhetorical posture sits on two axes (analytic-to-emotive and change-to-preservation).
+The Epistemic Engine is a Python tool that analyzes the structural properties of institutional texts - focusing on *how* texts make their claims rather than *what* they claim. It identifies patterns like bias, authority laundering, and rhetorical positioning without relying on AI-based classification.
 
-This is not fact-checking. The engine addresses structural opacity: how a document behaves as an epistemic artifact, not what it claims. As demonstrated in the project (Section 13.2), when comparing the September 9, 2025 BLS Preliminary Benchmark Revision with the White House statement on the same data, the BLS release classifies as `clean` with `open_loop_reasoning` posture, while the White House statement classifies as `evasion`, `Q4 quadrant`, intensity near `6.2`, with `defensive_routine` posture and `identity_laundering` flag — the engine quantifies that structural difference.
-
-The system implements a six-layer architecture:
-
-| Layer | Name | Question Answered |
-|-------|------|-------------------|
-| 0 | Structural Extraction | What signals does this text emit? (14 densities) |
-| 1 | Wittgenstein | What institutional language game is being played? |
-| 2 | Popper Bias Gate | Are claims open to refutation or self-protecting? |
-| 3 | Authority Laundering | Is authority laundered through form or identity? |
-| 4 | Argyris Learning Posture | Does discourse invite learning or protect assumptions? |
-| 5 | Coordinate Spectrograph | Where does it sit in affect–cognition and change–stability space? |
-
-## Installation
+## Quick Start
 
 ```bash
 git clone https://github.com/yacEYX-view/The-Epistemic-Engine.git
 cd The-Epistemic-Engine
-
-Python 3.8+ required. No external dependencies — the engine uses only the standard library.
-
-Usage
 python epistemic_engine.py --text "Your institutional text here"
 python epistemic_engine.py --file path/to/document.txt
+```
 
-The engine runs in under two seconds on a standard laptop. API keys are only needed if you are
-using an LLM platform as the interface wrapper (GPT o3 or Gemini). The Python kernel itself runs
-locally and independently of any AI provider.
+Requirements: Python 3.8+ (no external dependencies)
 
-Sample Output
+## What's Included
 
+- **epistemic_engine.py**: Main analysis engine
+- **METHODS.md**: Complete technical specification 
+- **CHANGELOG.md**: Version history and development notes
+- **data/**: Validation datasets and benchmark results
+- **docs/**: Thesis and additional documentation
+- **demo/**: Example analyses and outputs
+
+## How It Works
+
+The engine processes texts through 6 analytical layers:
+
+1. **Structural Extraction** - Counts 14 types of linguistic signals
+2. **Language Game Classification** - Identifies institutional context
+3. **Bias Detection** - Flags evasion, ideological, or moral framing patterns
+4. **Authority Laundering** - Detects scientism, bureaucratic masking, identity laundering
+5. **Learning Posture** - Determines if discourse is open or defensive
+6. **Coordinate Placement** - Maps text position on HEAD/HEART and DISRUPTION/STABILITY axes
+
+Results are deterministic and reproducible across platforms and time.
+
+## Sample Output
+
+```
 A) AUDIT SNAPSHOT
-
-Language game:    corporate_risk_disclosure
-Bias gate:        clean
-Laundering:       bureaucratic_masking
+Language game: corporate_risk_disclosure
+Bias gate: clean
+Laundering: bureaucratic_masking
 Learning posture: defensive_routine
-Testability:      immunizing_stratagem
+Testability: immunizing_stratagem
 
 B) LOGIC RESULT
-
 Logic type used: clean claim structure — no bias gate fired.
-Layer 3 (Laundering):  bureaucratic_masking FIRED
-  lex_density (0.038) > 0.02 AND ratio_density (0.041) > 0.02
 
 C) SPECTROGRAPH
-
         HEAD (+)
            |
     Q1     ★     Q2
@@ -73,18 +66,47 @@ STAB <---- + ----> DISR
 X = -1.2, Y = -0.8, Intensity = 3.4/10
 
 D) ASK-FOR MENU
+1) Language game
+2) Argument skeleton  
+3) Falsifiability and self-protection
+4) Authority laundering excerpts
+5) Learning posture
+6) Deterministic readout (proof)
+7) What would change the conclusion
+```
 
-To audit the audit, request:
-  "Show full signal densities"
-  "Show gate threshold comparisons"
-  "Explain bureaucratic_masking flag"
+## Repository Structure
 
-Validation Highlights
-The engine was validated against a 69-text corpus. Key findings include:
+```
+The-Epistemic-Engine/
+├── epistemic_engine.py        # Core engine
+├── METHODS.md                 # Technical specification
+├── CHANGELOG.md               # Development history
+├── README.md                  # This file
+├── requirements.txt           # No dependencies
+├── LICENSE                    # MIT License
+├── data/                      # Validation datasets
+│   ├── Texts.csv
+│   ├── Annotations.csv
+│   └── ...                   
+├── docs/                      # Documentation
+│   ├── Concepcion_Epistemic_Engine_2026.pdf
+│   └── ...
+└── demo/                      # Examples
+    ├── _article1_divergence.md
+    └── ...
+```
 
-Kernel Violation Pattern: LLMs correctly compute signals but fail to execute deterministic logic (see docs/KERNEL_VIOLATION_REGISTRY.md).
-Register-Mismatch Gradient: Performance (Cohen's κ) drops from 1.000 on synthetic institutional text to 0.053 on informal argumentation (MAFALDA), proving distinct analytical tasks.
-Learn More
-Thesis: docs/Concepcion_Epistemic_Engine_2026.pdf
-Methods: METHODS.md
-Examples: demo/ directory
+## Validation
+
+The engine was validated against 69 texts including SEC filings, BLS reports, and news articles. Key findings:
+- **Kernel Violation Pattern**: LLMs compute signals correctly but fail deterministic logic execution
+- **Register-Mismatch Gradient**: Performance drops from institutional (κ=1.000) to informal text (κ=0.053)
+- **Temporal Stability**: Signal estimation varies over time (documented shifts in revalidation)
+
+For complete validation results, see `data/` directory and `docs/Concepcion_Epistemic_Engine_2026.pdf`.
+
+## License
+
+MIT License - see LICENSE file
+```
