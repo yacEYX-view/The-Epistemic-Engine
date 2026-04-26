@@ -1,4 +1,3 @@
-```python
 #!/usr/bin/env python3
 """
 The Epistemic Engine v2.1.0
